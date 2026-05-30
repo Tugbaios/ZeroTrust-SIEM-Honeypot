@@ -1,4 +1,29 @@
 
 # 🛡️ Zero Trust SIEM & Honeypot Panel
 
-📂 Proje Dosyaları Ne İşe Yarar?traffic_data.csv (Veri Seti): Sistemimizin "ders kitabı". İçinde normal kullanıcı trafiği ve saldırgan (bot) trafiğine ait örnek kayıtlar var.  train_model.py (Eğitim): Bu kod, veri setindeki kayıtları okur, aralarındaki farkı öğrenir ve "anomaly_model.pkl" adında bir "yapay zeka beyni" dosyası üretir.  test_model.py (Doğrulama): Modelin çalışıp çalışmadığını hızlıca kontrol etmeye yarayan kısa test dosyasıdır.  siem_panel.py (Arayüz): Tüm sistemin kalbidir. Yapay zekayı yükler, donanımdan gelen verileri canlı izler, saldırı anında kırmızı alarm verir ve acil durum kilitlerini yönetir.  🚀 Arkadaşlar Ne Yapmalı? (Adım Adım)Projeyi kendi bilgisayarlarında ayağa kaldırmak için şu yolu izlemeleri yeterli:Terminali/CMD'yi Açın: Proje klasörüne sağ tıklayın ve "Burada Terminali Aç" (veya CMD) seçeneğini kullanın.Kütüphaneleri Yükleyin: Bilgisayarınızın kodu tanıması için şu tek satırlık komutu yazıp Enter'a basın:pip install pandas scikit-learn joblib customtkinter pyserialYapay Zekayı Eğitin: "Beyni" oluşturmak için şunu çalıştırın:python train_model.pyPaneli Başlatın: Sistemi izlemeye başlamak için son olarak şunu çalıştırın:python siem_panel.pyÖnemli Not: Eğer bilgisayarınızda gerçek bir cihaz (ESP32) bağlı değilse, arayüz açıldığında hiçbir hata almazsınız; sistem otomatik olarak "Simülasyon Modu"na geçer. Alt taraftaki butonları kullanarak "Brute-Force" veya "Nmap" saldırılarını kendiniz tetikleyip sistemin nasıl tepki verdiğini canlı izleyebilirsiniz.  
+Bu proje, ağa sızmaya çalışan veya keşif yapan kötü niyetli yazılımları makine öğrenmesi algoritmaları kullanarak tespit eden gerçek zamanlı bir Siber Güvenlik İzleme (SIEM) panelidir. 
+
+
+
+## 📂 Proje Dosyaları
+* **`traffic_data.csv`**: Sistemimizin eğitim için kullandığı veri seti.
+* **`train_model.py`**: Veri setini işleyip "yapay zeka beynini" (`anomaly_model.pkl`) eğiten kod.
+* **`test_model.py`**: Modelin başarısını hızlıca test eden yardımcı script.
+* **`siem_panel.py`**: Canlı verileri izleyen, saldırı anında alarm veren ve Sıfır Güven (Zero Trust) protokollerini yöneten ana arayüz.
+
+## 🚀 Kurulum (Adım Adım)
+
+Projeyi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
+
+1. **Terminali Açın:** Proje klasörüne sağ tıklayıp terminali (CMD/PowerShell) açın.
+2. **Gerekli Kütüphaneleri Yükleyin:**
+   ```bash
+   pip install pandas scikit-learn joblib customtkinter pyserial
+
+   Modeli Eğitin: (Beyni oluşturmak için)
+   python train_model.py
+
+   Paneli Başlatın: (Sistemi izlemeye başlamak için)
+   python siem_panel.py
+
+   Not: Gerçek bir cihaz bağlı değilse, sistem otomatik olarak "Simülasyon Modu"na geçer. Paneldeki butonlarla saldırı testleri yapabilirsiniz.
